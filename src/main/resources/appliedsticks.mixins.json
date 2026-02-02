@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.benbenlaw.appliedsticks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemStickTooltipMixin",
+    "StickJobInvoker",
+    "StickJobMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+
+}
