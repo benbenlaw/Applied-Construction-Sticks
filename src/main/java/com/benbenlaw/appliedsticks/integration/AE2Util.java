@@ -39,7 +39,7 @@ public class AE2Util {
         IGrid grid = accessPoint.getGrid();
         if (grid == null) return null;
 
-        System.out.println(grid.getStorageService().getInventory().getAvailableStacks().getFirstEntry());
+        //System.out.println(grid.getStorageService().getInventory().getAvailableStacks().getFirstEntry());
         return grid.getStorageService().getInventory();
     }
 }

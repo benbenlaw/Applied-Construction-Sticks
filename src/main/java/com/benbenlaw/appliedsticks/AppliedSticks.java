@@ -2,6 +2,7 @@ package com.benbenlaw.appliedsticks;
 
 import com.benbenlaw.appliedsticks.integration.AE2Integration;
 import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
+import com.benbenlaw.appliedsticks.network.AppliedSticksMessages;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
@@ -27,7 +28,7 @@ public class AppliedSticks{
     }
 
     public void networkingSetup(RegisterPayloadHandlersEvent event) {
-        //AppliedSticksMessages.registerNetworking(event);
+        AppliedSticksMessages.registerNetworking(event);
     }
 
     public static void commonSetup(final FMLCommonSetupEvent event) {
