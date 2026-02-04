@@ -1,5 +1,6 @@
 package com.benbenlaw.appliedsticks.mixin;
 
+import appeng.api.ids.AEComponents;
 import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
 import mrbysco.constructionstick.items.stick.ItemStick;
 import net.minecraft.ChatFormatting;
@@ -34,11 +35,11 @@ public abstract class ItemStickTooltipMixin {
             return;
         }
 
-        if (!stack.has(AppliedStickComponent.ME_POS.get())) {
+        if (!stack.has(AEComponents.WIRELESS_LINK_TARGET)) {
             return;
         }
 
-        GlobalPos globalPos = stack.get(AppliedStickComponent.ME_POS.get());
+        GlobalPos globalPos = stack.get(AEComponents.WIRELESS_LINK_TARGET);
         if (globalPos == null) {
             return;
         }

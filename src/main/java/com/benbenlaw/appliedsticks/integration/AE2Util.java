@@ -2,6 +2,7 @@ package com.benbenlaw.appliedsticks.integration;
 
 import appeng.api.AECapabilities;
 import appeng.api.config.Actionable;
+import appeng.api.ids.AEComponents;
 import appeng.api.implementations.blockentities.IWirelessAccessPoint;
 import appeng.api.networking.IGrid;
 import appeng.api.networking.security.IActionSource;
@@ -25,7 +26,7 @@ public class AE2Util {
     }
 
     public static GlobalPos getLinkedPos(ItemStack stick) {
-        return stick.has(AppliedStickComponent.ME_POS.get()) ? stick.get(AppliedStickComponent.ME_POS.get()) : null;
+        return stick.has(AEComponents.WIRELESS_LINK_TARGET) ? stick.get(AEComponents.WIRELESS_LINK_TARGET) : null;
     }
 
     public static MEStorage getStorage(ItemStack stick, Player player) {

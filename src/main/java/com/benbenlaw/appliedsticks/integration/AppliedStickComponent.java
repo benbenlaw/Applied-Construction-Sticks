@@ -11,8 +11,8 @@ public class AppliedStickComponent {
 
     public static final DeferredRegister<DataComponentType<?>> COMPONENTS = DeferredRegister.create(BuiltInRegistries.DATA_COMPONENT_TYPE, AppliedSticks.MOD_ID);
 
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<GlobalPos>> ME_POS =
-            COMPONENTS.register("me_pos", () ->
-                    DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
-
+    //public static final DeferredHolder<DataComponentType<?>, DataComponentType<GlobalPos>> ME_POS =
+    //        COMPONENTS.register("me_pos", () ->
+    //                DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
+//
 }

@@ -1,5 +1,6 @@
 package com.benbenlaw.appliedsticks.event;
 
+import appeng.api.ids.AEComponents;
 import com.benbenlaw.appliedsticks.AppliedSticks;
 import com.benbenlaw.appliedsticks.client.ClientStickJobHandler;
 import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
@@ -58,7 +59,7 @@ class ClientEvents {
                         colorG = 1.0F;
                     }
 
-                    if (stick.has(AppliedStickComponent.ME_POS)) {
+                    if (stick.has(AEComponents.WIRELESS_LINK_TARGET)) {
                         colorB = 1.0F;
                         blocks = ClientStickJobHandler.getPositions();
                     }

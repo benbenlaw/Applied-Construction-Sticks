@@ -2,6 +2,7 @@ package com.benbenlaw.appliedsticks.integration;
 
 import appeng.api.features.GridLinkables;
 import appeng.api.features.IGridLinkableHandler;
+import appeng.api.ids.AEComponents;
 import mrbysco.constructionstick.items.stick.ItemStickBasic;
 import mrbysco.constructionstick.registry.ModItems;
 import net.minecraft.core.GlobalPos;
@@ -27,12 +28,12 @@ public class AE2Integration {
 
         @Override
         public void link(ItemStack itemStack, GlobalPos pos) {
-            itemStack.set(AppliedStickComponent.ME_POS.get(), pos);
+            itemStack.set(AEComponents.WIRELESS_LINK_TARGET, pos);
         }
 
         @Override
         public void unlink(ItemStack itemStack) {
-            itemStack.remove(AppliedStickComponent.ME_POS.get());
+            itemStack.remove(AEComponents.WIRELESS_LINK_TARGET);
         }
     }
 

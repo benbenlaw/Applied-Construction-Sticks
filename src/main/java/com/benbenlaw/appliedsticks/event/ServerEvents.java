@@ -1,5 +1,6 @@
 package com.benbenlaw.appliedsticks.event;
 
+import appeng.api.ids.AEComponents;
 import com.benbenlaw.appliedsticks.AppliedSticks;
 import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
 import com.benbenlaw.appliedsticks.network.StickJobPacket;
@@ -36,7 +37,7 @@ public class ServerEvents {
 
         HitResult result = player.pick(player.blockInteractionRange(), 0.0F,false);
 
-        if (!heldItem.has(AppliedStickComponent.ME_POS)) return;
+        if (!heldItem.has(AEComponents.WIRELESS_LINK_TARGET)) return;
         if (!(result instanceof BlockHitResult hitResult)) return;
         StickJob job = ItemStick.getStickJob(player, level, hitResult, heldItem);
 
