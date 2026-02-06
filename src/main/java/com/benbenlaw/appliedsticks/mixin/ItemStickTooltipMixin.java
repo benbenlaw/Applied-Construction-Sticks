@@ -36,7 +36,8 @@ public abstract class ItemStickTooltipMixin {
         }
 
         if (!stack.has(AEComponents.WIRELESS_LINK_TARGET)) {
-            return;
+            lines.add(Component.translatable("tooltip.appliedsticks.unlinked").withStyle(ChatFormatting.AQUA));
+
         }
 
         GlobalPos globalPos = stack.get(AEComponents.WIRELESS_LINK_TARGET);
@@ -47,7 +48,7 @@ public abstract class ItemStickTooltipMixin {
         BlockPos pos = globalPos.pos();
         String dim = globalPos.dimension().location().toString();
 
-        lines.add(Component.literal("Linked to ME Network at:").withStyle(ChatFormatting.AQUA));
+        lines.add(Component.translatable("tooltip.appliedsticks.linked").withStyle(ChatFormatting.AQUA));
 
         lines.add(Component.literal(dim).withStyle(ChatFormatting.GREEN));
 

@@ -3,12 +3,12 @@
   "package": "com.benbenlaw.appliedsticks.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ItemStickTooltipMixin",
     "RenderBlockPreviewMixin",
     "StickJobInvoker",
     "StickJobMixin"
   ],
   "client": [
+    "ItemStickTooltipMixin"
   ],
   "injectors": {
     "defaultRequire": 1

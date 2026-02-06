@@ -4,10 +4,15 @@ import appeng.api.ids.AEComponents;
 import com.benbenlaw.appliedsticks.AppliedSticks;
 import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
 import com.benbenlaw.appliedsticks.network.StickJobPacket;
+import mrbysco.constructionstick.ConstructionStick;
 import mrbysco.constructionstick.items.stick.ItemStick;
 import mrbysco.constructionstick.stick.StickJob;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -39,6 +44,8 @@ public class ServerEvents {
 
         if (!heldItem.has(AEComponents.WIRELESS_LINK_TARGET)) return;
         if (!(result instanceof BlockHitResult hitResult)) return;
+        if (!heldItem.is(TagKey.create(Registries.ITEM, ResourceLocation.parse("constructionstick:construction_sticks")))) return;
+
         StickJob job = ItemStick.getStickJob(player, level, hitResult, heldItem);
 
         PacketDistributor.sendToPlayer((ServerPlayer) player, new StickJobPacket(job.getBlockPositions()));
