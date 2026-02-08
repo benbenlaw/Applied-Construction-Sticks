@@ -1,5 +1,8 @@
 Applied Construction Sticks
 
+1.0.5
+- Fixed block highlighting not working correctly
+
 1.0.2
 
 - Removed this mods component for GlobalPos and replaced with AEComponents.WIRELESS_LINK_TARGET
