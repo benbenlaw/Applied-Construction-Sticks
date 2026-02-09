@@ -20,7 +20,6 @@ public class HandlerAE2 implements IContainerHandler {
     @Override
     public boolean matches(Player player, ItemStack itemStack, ItemStack inventoryStack) {
 
-        // Must be a construction stick
         if (!inventoryStack.is(TagKey.create(
                 Registries.ITEM,
                 ResourceLocation.parse("constructionstick:construction_sticks")
@@ -28,7 +27,6 @@ public class HandlerAE2 implements IContainerHandler {
             return false;
         }
 
-        // Must be the ACTUALLY held item
         boolean isHeld =
                 ItemStack.isSameItemSameComponents(inventoryStack, player.getMainHandItem()) ||
                         ItemStack.isSameItemSameComponents(inventoryStack, player.getOffhandItem());
@@ -37,12 +35,10 @@ public class HandlerAE2 implements IContainerHandler {
             return false;
         }
 
-        // Must be linked to an AE2 grid
         if (!AE2Util.isLinkedToGrid(inventoryStack, player)) {
             return false;
         }
 
-        // Must be able to resolve storage
         return AE2Util.getStorage(inventoryStack, player) != null;
     }
 
