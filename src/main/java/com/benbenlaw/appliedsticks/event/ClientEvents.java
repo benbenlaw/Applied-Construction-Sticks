@@ -3,8 +3,6 @@ package com.benbenlaw.appliedsticks.event;
 import appeng.api.ids.AEComponents;
 import com.benbenlaw.appliedsticks.AppliedSticks;
 import com.benbenlaw.appliedsticks.client.ClientStickJobHandler;
-import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
-import com.benbenlaw.appliedsticks.network.AppliedSticksMessages;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import mrbysco.constructionstick.basics.StickUtil;
@@ -23,7 +21,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderHighlightEvent;
@@ -61,7 +58,6 @@ class ClientEvents {
 
                     if (stick.has(AEComponents.WIRELESS_LINK_TARGET)) {
                         colorB = 1.0F;
-                        blocks = ClientStickJobHandler.getPositions();
                     }
 
                     if (blocks != null && !blocks.isEmpty()) {

@@ -1,5 +1,10 @@
 Applied Construction Sticks
 
+1.1.0
+- Reworked the mod to use IContainerHandler, this reduces the amount of mixins and networking needed
+- Removed a lot of uneeded classes
+- Linked sticks will now use items from the players inventory if the ae2 network doesn't contain the required items
+
 1.0.5
 - Fixed block highlighting not working correctly
 

@@ -1,7 +1,6 @@
 package com.benbenlaw.appliedsticks.mixin;
 
 import appeng.api.ids.AEComponents;
-import com.benbenlaw.appliedsticks.integration.AppliedStickComponent;
 import mrbysco.constructionstick.items.stick.ItemStick;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
