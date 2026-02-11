@@ -1,5 +1,9 @@
 Applied Construction Sticks
 
+1.1.1
+- Readded networking to show the correct StickJob still not happy with this
+- Removed all mixins
+
 1.1.0
 - Reworked the mod to use IContainerHandler, this reduces the amount of mixins and networking needed
 - Removed a lot of uneeded classes
