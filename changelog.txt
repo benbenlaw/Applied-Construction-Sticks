@@ -1,5 +1,9 @@
 Applied Construction Sticks
 
+
+1.1.2
+- Fixed shift information being added to all items instead of just the construction stick
+
 1.1.1
 - Readded networking to show the correct StickJob still not happy with this
 - Removed all mixins
