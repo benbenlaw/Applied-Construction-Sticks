@@ -9,6 +9,7 @@ import appeng.api.stacks.KeyCounter;
 import appeng.api.storage.MEStorage;
 import com.benbenlaw.appliedsticks.integration.AE2Util;
 import mrbysco.constructionstick.api.IContainerHandler;
+import mrbysco.constructionstick.containers.ContainerTrace;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -42,10 +43,14 @@ public class HandlerAE2 implements IContainerHandler {
         return AE2Util.getStorage(inventoryStack, player) != null;
     }
 
+    @Override
+    public int getSignature(Player player, ItemStack itemStack) {
+        return 0;
+    }
 
     @Override
-    public int countItems(Player player, ItemStack itemStack, ItemStack inventoryStack) {
-        MEStorage storage = AE2Util.getStorage(inventoryStack, player);
+    public int countItems(Player player, ContainerTrace containerTrace, ItemStack itemStack, ItemStack itemStack1) {
+        MEStorage storage = AE2Util.getStorage(itemStack1, player);
         if (storage == null) return 0;
 
         var key = AEItemKey.of(itemStack);
@@ -59,19 +64,20 @@ public class HandlerAE2 implements IContainerHandler {
     }
 
     @Override
-    public int useItems(Player player, ItemStack itemStack, ItemStack inventoryStack, int count) {
-        MEStorage storage = AE2Util.getStorage(inventoryStack, player);
-        if (storage == null) return count;
+    public int useItems(Player player, ContainerTrace containerTrace, ItemStack itemStack, ItemStack itemStack1, int i) {
+        MEStorage storage = AE2Util.getStorage(itemStack1, player);
+        if (storage == null) return i;
 
         var key = AEItemKey.of(itemStack);
-        if (key == null) return count;
+        if (key == null) return i;
 
-        long canExtract = storage.extract(key, count, Actionable.SIMULATE, IActionSource.ofPlayer(player));
-        if (canExtract <= 0) return count;
+        long canExtract = storage.extract(key, i, Actionable.SIMULATE, IActionSource.ofPlayer(player));
+        if (canExtract <= 0) return i;
 
         long extracted = storage.extract(key, canExtract, Actionable.MODULATE, IActionSource.ofPlayer(player));
 
-        return count - (int) extracted;
-
+        return i - (int) extracted;
     }
+
+
 }
