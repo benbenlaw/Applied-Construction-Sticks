@@ -10,7 +10,6 @@ public class AppliedSticksMessages {
     public static void registerNetworking(final RegisterPayloadHandlersEvent event) {
         final PayloadRegistrar registrar = event.registrar(AppliedSticks.MOD_ID);
 
-
         registrar.playToClient(StickJobPacket.TYPE, StickJobPacket.STREAM_CODEC, StickJobPacket.HANDLER);
     }
 }

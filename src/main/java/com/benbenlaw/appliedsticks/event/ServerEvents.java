@@ -7,8 +7,7 @@ import mrbysco.constructionstick.items.stick.ItemStick;
 import mrbysco.constructionstick.stick.StickJob;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
@@ -39,7 +38,7 @@ public class ServerEvents {
             HitResult result = player.pick(player.blockInteractionRange(), 0.0F, false);
 
             if (heldItem.has(AEComponents.WIRELESS_LINK_TARGET)
-                    && heldItem.is(TagKey.create(Registries.ITEM, ResourceLocation.parse("constructionstick:construction_sticks")))
+                    && heldItem.is(TagKey.create(Registries.ITEM, Identifier.parse("constructionstick:construction_sticks")))
                     && result instanceof BlockHitResult hitResult) {
 
                 StickJob job = ItemStick.getStickJob(player, level, hitResult, heldItem);

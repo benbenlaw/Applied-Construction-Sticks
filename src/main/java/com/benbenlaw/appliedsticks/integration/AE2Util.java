@@ -1,23 +1,15 @@
 package com.benbenlaw.appliedsticks.integration;
 
-import appeng.api.AECapabilities;
-import appeng.api.config.Actionable;
 import appeng.api.ids.AEComponents;
 import appeng.api.implementations.blockentities.IWirelessAccessPoint;
 import appeng.api.networking.IGrid;
-import appeng.api.networking.security.IActionSource;
-import appeng.api.stacks.AEItemKey;
 import appeng.api.storage.MEStorage;
 import mrbysco.constructionstick.items.stick.ItemStickBasic;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
-
-import java.util.Iterator;
 
 public class AE2Util {
 
