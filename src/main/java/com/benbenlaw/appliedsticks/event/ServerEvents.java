@@ -1,6 +1,7 @@
 package com.benbenlaw.appliedsticks.event;
 
 import appeng.api.ids.AEComponents;
+import appeng.items.tools.powered.WirelessTerminalItem;
 import com.benbenlaw.appliedsticks.AppliedSticks;
 import com.benbenlaw.appliedsticks.network.StickJobPacket;
 import mrbysco.constructionstick.items.stick.ItemStick;
