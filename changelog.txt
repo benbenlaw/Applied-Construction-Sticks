@@ -1,5 +1,8 @@
 Applied Construction Sticks
 
+# 1.2.1
+- Fixed sticks not working across dimensions
+
 # 1.2.0
 - Added support for Construction Sticks 1.21.1-1.3.0
 
