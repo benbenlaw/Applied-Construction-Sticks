@@ -7,6 +7,7 @@ import appeng.api.stacks.KeyCounter;
 import appeng.api.storage.MEStorage;
 import com.benbenlaw.appliedsticks.integration.AE2Util;
 import mrbysco.constructionstick.api.IContainerHandler;
+import mrbysco.constructionstick.containers.ContainerTrace;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
@@ -41,7 +42,12 @@ public class HandlerAE2 implements IContainerHandler {
     }
 
     @Override
-    public int countItems(Player player, ItemStack itemStack, ItemStack inventoryStack) {
+    public int getSignature(Player player, ItemStack itemStack) {
+        return 0;
+    }
+
+    @Override
+    public int countItems(Player player, ContainerTrace containerTrace, ItemStack itemStack, ItemStack inventoryStack) {
         MEStorage storage = AE2Util.getStorage(inventoryStack, player);
         if (storage == null) return 0;
 
@@ -56,7 +62,7 @@ public class HandlerAE2 implements IContainerHandler {
     }
 
     @Override
-    public int useItems(Player player, ItemStack itemStack, ItemStack inventoryStack, int count) {
+    public int useItems(Player player, ContainerTrace containerTrace, ItemStack itemStack, ItemStack inventoryStack, int count) {
         MEStorage storage = AE2Util.getStorage(inventoryStack, player);
         if (storage == null) return count;
 
